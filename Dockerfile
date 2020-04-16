@@ -9,7 +9,7 @@ RUN apt-get -qqy update \
                   libxcb-dri3-0 libxcb-present0 libxcb-sync1 libxshmfence1 libxxf86vm1 libglapi-mesa \
                   libatomic1 gnupg ca-certificates curl python-gpgme python3-gpg \
   && echo 'deb http://linux.dropbox.com/debian stretch main' > /etc/apt/sources.list.d/dropbox.list \
-	&& apt-key adv --keyserver ipv4.pool.sks-keyservers.net --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
+	&& apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
 	&& apt-get -qqy update \
 	# Note 'ca-certificates' dependency is required for 'dropbox start -i' to succeed
 	&& apt-get -qqy install dropbox \
