@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 MAINTAINER Jan Broer <janeczku@yahoo.de>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,7 +8,7 @@ RUN apt-get -qqy update \
   && apt-get -qqy install libc6 libglapi-mesa libxdamage1 libxfixes3 libxcb-glx0 libxcb-dri2-0 \
                   libxcb-dri3-0 libxcb-present0 libxcb-sync1 libxshmfence1 libxxf86vm1 libglapi-mesa \
                   libatomic1 gnupg ca-certificates curl python-gpgme python3-gpg \
-  && echo 'deb http://linux.dropbox.com/debian stretch main' > /etc/apt/sources.list.d/dropbox.list \
+  && echo 'deb http://linux.dropbox.com/debian buster main' > /etc/apt/sources.list.d/dropbox.list \
 	&& apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
 	&& apt-get -qqy update \
 	# Note 'ca-certificates' dependency is required for 'dropbox start -i' to succeed
